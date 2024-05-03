@@ -652,10 +652,10 @@ class PSOLID(Property):
         return fields
 
     def repr_fields(self):
-        cordm = set_blank_if_default(self.cordm, 0)
-        fctn = set_blank_if_default(self.fctn, 'SMECH')
-        fields = ['PSOLID', self.pid, self.Mid(), cordm, self.integ,
-                  self.stress, self.isop, fctn]
+        # cordm = set_blank_if_default(self.cordm, 0)
+        # fctn = set_blank_if_default(self.fctn, 'SMECH')
+        fields = ['PSOLID', self.pid, self.Mid(), self.cordm, self.integ,
+                  self.stress, self.isop, self.fctn]
         return fields
 
     def write_card(self, size: int=8, is_double: bool=False) -> str:

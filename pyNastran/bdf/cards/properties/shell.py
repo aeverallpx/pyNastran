@@ -2611,28 +2611,28 @@ class PSHELL(Property):
         return list_fields
 
     def repr_fields(self):
-        twelveIt3 = set_blank_if_default(self.twelveIt3, 1.0)
-        tst = set_blank_if_default(self.tst, 0.833333)
-        tst2 = set_blank_if_default(self.tst, 0.83333)
-        if tst is None or tst2 is None:
-            tst = None
-        nsm = set_blank_if_default(self.nsm, 0.0)
-        if self.t is not None:
-            t_over_2 = self.t / 2.
-            z1 = set_blank_if_default(self.z1, -t_over_2)
-            z2 = set_blank_if_default(self.z2, t_over_2)
-        else:
-            z1 = self.z1
-            z2 = self.z2
+        twelveIt3 = self.twelveIt3 #set_blank_if_default(self.twelveIt3, 1.0)
+        tst = self.tst #set_blank_if_default(self.tst, 0.833333)
+        # tst2 = self.tst set_blank_if_default(self.tst, 0.83333)
+        # if tst is None or tst2 is None:
+        #     tst = None
+        nsm = self.nsm #set_blank_if_default(self.nsm, 0.0)
+        # if self.t is not None:
+        #     t_over_2 = self.t / 2.
+        #     z1 = set_blank_if_default(self.z1, -t_over_2)
+        #     z2 = set_blank_if_default(self.z2, t_over_2)
+        # else:
+        z1 = self.z1
+        z2 = self.z2
 
         mid1 = self.Mid1()
         mid2 = self.Mid2()
         mid3 = self.Mid3()
         mid4 = self.Mid4()
-        mid1 = None if mid1 == 0 else mid1
-        mid2 = None if mid2 == 0 else mid2
-        mid3 = None if mid3 == 0 else mid3
-        mid4 = None if mid4 == 0 else mid4
+        # mid1 = None if mid1 == 0 else mid1
+        # mid2 = None if mid2 == 0 else mid2
+        # mid3 = None if mid3 == 0 else mid3
+        # mid4 = None if mid4 == 0 else mid4
         list_fields = ['PSHELL', self.pid, mid1, self.t, mid2,
                        twelveIt3, mid3, tst, nsm, z1, z2, mid4]
         return list_fields
