@@ -147,8 +147,8 @@ def _filename(filename: str) -> str:
 
     .. warning:: This might be Windows specific.
     """
-    if len(filename) > 255:
-        return '\\\\?\\' + filename
+    # if len(filename) > 255:
+    #     return '\\\\?\\' + filename
     return filename
 
 def __object_attr(obj, mode, keys_to_skip, attr_type, filter_properties: bool=False):
